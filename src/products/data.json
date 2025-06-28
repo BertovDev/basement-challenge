@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "name": "Black t-shirt",
+    "description": "The blackest black t-shirt",
+    "price": 7.95,
+    "image": "/products/shirt.png",
+    "sizes": [
+      {
+        "name": "S"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "XL"
+      }
+    ]
+  },
+
+  {
+    "id": "2",
+    "name": "Black Hoodie",
+    "description": "The blackest black hoodie",
+    "price": 13,
+    "image": "/products/hoodie.png",
+    "sizes": [
+      {
+        "name": "S"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "XL"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Black Cap",
+    "description": "The blackest black cap",
+    "price": 23,
+    "image": "/products/cap.png",
+    "sizes": [
+      {
+        "name": "S"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "XL"
+      }
+    ]
+  }
+]
