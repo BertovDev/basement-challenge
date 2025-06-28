@@ -53,7 +53,7 @@ export default function Marquee({}: Props) {
     }
     if (asterisk2) {
       gsap.to(asterisk2, {
-        rotateX: -360,
+        rotate: -360,
         duration: 9,
         ease: "linear",
         repeat: -1,
