@@ -15,6 +15,7 @@ export default function ProductItem({ product }: Props) {
           alt="Add to cart"
           width={250}
           height={250}
+          loading="lazy"
         />
       </div>
       <Image
@@ -23,6 +24,7 @@ export default function ProductItem({ product }: Props) {
         alt={product.name}
         width={500}
         height={500}
+        loading="lazy"
       />
       <div className="flex flex-row justify-between w-full bg-black py-4 border-t-2 border-white">
         <span>{product.name}</span>

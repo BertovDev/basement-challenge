@@ -14,6 +14,7 @@ export default function Navbar({}: Props) {
           alt="Logo"
           width={192}
           height={192}
+          loading="lazy"
         />
         <Image
           className="block md:hidden"
@@ -21,6 +22,8 @@ export default function Navbar({}: Props) {
           alt="Logo"
           width={32}
           height={32}
+          loading="lazy"
+          decoding="async"
         />
       </Link>
       <Image

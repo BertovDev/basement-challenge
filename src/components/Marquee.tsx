@@ -73,15 +73,17 @@ export default function Marquee({}: Props) {
     <div className="flex-none relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full">
       <div className="max-w-screen hidden md:flex relative mx-auto z-100">
         <div
-          className="absolute bottom-0 right-10 lg:right-32"
+          className="absolute -bottom-10 right-10 lg:right-32"
           ref={asterisk1Ref}
         >
           <Image
-            className="w-32 lg:w-full"
+            className="w-32 lg:w-full pointer-none"
             src="/asterisk.svg"
             alt="asterisk1"
             width={180}
             height={180}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div
@@ -89,11 +91,13 @@ export default function Marquee({}: Props) {
           ref={asterisk2Ref}
         >
           <Image
-            className="w-32 lg:w-full"
+            className="w-32 lg:w-full pointer-none"
             src="/asterisk.svg"
             alt="asterisk2"
             width={180}
             height={180}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

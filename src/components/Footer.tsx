@@ -13,6 +13,8 @@ export default function Footer({}: Props) {
           alt="Logo"
           width={312}
           height={312}
+          loading="lazy"
+          decoding="async"
         />
         <p className="text-[15vw] ">WEAR</p>
       </div>
