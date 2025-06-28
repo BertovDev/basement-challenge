@@ -17,7 +17,7 @@ export default function Marquee() {
     if (!marqueeContainer || !marquee) return;
 
     // Animate infinite marquee
-    let context = gsap.context(() => {
+    const context = gsap.context(() => {
       const animate = () => {
         gsap.killTweensOf(marquee);
         // Get width of just one copy (half the total width)
