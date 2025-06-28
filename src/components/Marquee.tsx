@@ -70,7 +70,7 @@ export default function Marquee({}: Props) {
     .join(" ");
 
   return (
-    <div className="relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full">
+    <div className="flex-none relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full">
       <div className="max-w-screen hidden md:flex relative mx-auto z-100">
         <div
           className="absolute bottom-0 right-10 lg:right-32"

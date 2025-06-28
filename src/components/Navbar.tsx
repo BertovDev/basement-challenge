@@ -30,7 +30,7 @@ export default function Navbar({}: Props) {
         width={284}
         height={284}
       />
-      <button className="bg-black uppercase text-white text-lg px-12 py-2 text-center rounded-full border border-white">
+      <button className="bg-black uppercase cursor-pointer text-white text-sm md:text-lg md:px-12 px-6 py-2 text-center rounded-full border border-white">
         Cart
       </button>
     </div>
