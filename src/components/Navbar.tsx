@@ -8,7 +8,20 @@ export default function Navbar({}: Props) {
   return (
     <div className="flex justify-between  items-center py-6 px-6 md:px-12 ">
       <Link href={"/"}>
-        <Image src="/logo.svg" alt="Logo" width={192} height={192} />
+        <Image
+          className="hidden md:block"
+          src="/logo.svg"
+          alt="Logo"
+          width={192}
+          height={192}
+        />
+        <Image
+          className="block md:hidden"
+          src="/logo_mobile.svg"
+          alt="Logo"
+          width={32}
+          height={32}
+        />
       </Link>
       <Image
         className="hidden md:block"
