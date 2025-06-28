@@ -2,9 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {};
-
-export default function Navbar({}: Props) {
+export default function Navbar() {
   return (
     <div className="flex justify-between  items-center py-6 px-6 md:px-12 ">
       <Link href={"/"}>

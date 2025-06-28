@@ -2,9 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-type Props = {};
 
-export default function Marquee({}: Props) {
+export default function Marquee() {
   const marqueeContainerRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const asterisk1Ref = useRef<HTMLDivElement>(null);

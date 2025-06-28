@@ -1,9 +1,7 @@
 import React from "react";
 import "../app/globals.css";
 
-type Props = {};
-
-export default function Hero({}: Props) {
+export default function Hero() {
   return (
     <div className="flex-none px-6 md:px-12 text-center mt-6 md:mt-14 flex flex-col items-center justify-center">
       <h1 className="uppercase text-[14.7vw] whitespace-nowrap leading-[0.8]">
