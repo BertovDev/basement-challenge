@@ -70,7 +70,7 @@ export default function Marquee() {
 
   return (
     <div className="flex-none relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full">
-      <div className="max-w-screen hidden md:flex relative mx-auto z-100">
+      <div className="max-w-screen hidden md:flex relative mx-auto z-80">
         <div
           className="absolute -bottom-10 right-10 lg:right-32"
           ref={asterisk1Ref}
@@ -107,6 +107,8 @@ export default function Marquee() {
         aria-label="Marquee Swag Text"
         tabIndex={0}
       >
+        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10"></div>
         <div className="whitespace-nowrap flex py-0" ref={marqueeRef}>
           <p className="sm:text-3xl text-lg select-none">{marqueeText}</p>
           <p className="sm:text-3xl text-lg select-none" aria-hidden="true">

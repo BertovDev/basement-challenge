@@ -11,10 +11,7 @@ export default function Hero() {
         <div className="rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[12vw] max-w-36 flex items-center justify-center ">
           EST
         </div>
-        <h1
-          className="uppercase text-[16vw] text-black leading-[0.9] 
-        [text-shadow:-2px_0px_white,_0_2px_white,_2px_0px_white,_0_-2px_white]"
-        >
+        <h1 className="uppercase text-[16vw] leading-[0.9] text-outline-white">
           Supply
         </h1>
         <div className="rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[12vw] max-w-36 flex items-center justify-center">

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Cart from "./cart/Cart";
 
 export default function Navbar() {
   return (
@@ -34,6 +35,7 @@ export default function Navbar() {
       <button className="bg-black uppercase cursor-pointer text-white text-sm md:text-lg md:px-12 px-6 py-2 text-center rounded-full border border-white">
         Cart
       </button>
+      <Cart />
     </div>
   );
 }

@@ -2,6 +2,13 @@
 
 @import "../../assets/fonts/basement-grotesque.css";
 
+@layer utilities {
+  .text-outline-white {
+    @apply text-black;
+    text-shadow: -2px 0px white, 0 2px white, 2px 0px white, 0 -2px white;
+  }
+}
+
 html,
 body {
   font-family: "Basement Grotesque";
