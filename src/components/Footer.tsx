@@ -16,9 +16,7 @@ export default function Footer() {
         />
         <p className="text-[15vw] ">WEAR</p>
       </div>
-      <p className="uppercase text-[15.4vw] text-black [text-shadow:-2px_0px_white,_0_2px_white,_2px_0px_white,_0_-2px_white]">
-        EVERYDAY
-      </p>
+      <p className="uppercase text-[15.4vw] text-outline-white">EVERYDAY</p>
     </div>
   );
 }
