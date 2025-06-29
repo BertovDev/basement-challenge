@@ -40,9 +40,7 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
           <div className="grow flex items-start justify-center pt-4 px-2 lg:px-6 2xl:px-12 overflow-auto">
             <div className="text-center w-full flex flex-col justify-center gap-y-4 mb-2 overflow-x-hidden">
               {items.length > 0 ? (
-                items.map((item) => (
-                  <CartItem key={item.product.id} item={item} />
-                ))
+                items.map((item) => <CartItem key={item.id} item={item} />)
               ) : (
                 <div className="flex flex-col items-center justify-center">
                   <p

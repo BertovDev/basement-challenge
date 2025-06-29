@@ -1,14 +1,30 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCartStore } from "@/store/cart";
 
-export default function Navbar() {
+type Props = {
+  masterTl: gsap.core.Timeline;
+};
+
+export default function Navbar({ masterTl }: Props) {
   const { toggleCart, getTotalQuantity } = useCartStore();
 
+  useEffect(() => {
+    masterTl.to(".navbar", {
+      opacity: 1,
+      duration: 0.4,
+      ease: "power3.out",
+      stagger: {
+        each: 0.3,
+        from: "start",
+      },
+    });
+  }, []);
+
   return (
-    <div className="flex justify-between  items-center py-6 px-6 md:px-12 ">
+    <div className="navbar opacity-0 flex justify-between  items-center py-6 px-6 md:px-12 ">
       <Link href={"/"}>
         <Image
           className="hidden md:block"

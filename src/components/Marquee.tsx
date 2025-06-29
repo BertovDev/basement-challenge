@@ -3,7 +3,11 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 
-export default function Marquee() {
+type Props = {
+  masterTl: gsap.core.Timeline;
+};
+
+export default function Marquee({ masterTl }: Props) {
   const marqueeContainerRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const asterisk1Ref = useRef<HTMLDivElement>(null);
@@ -41,7 +45,27 @@ export default function Marquee() {
       return () => window.removeEventListener("resize", animate);
     }, marqueeContainer);
 
-    // Animate asterisks rotation
+    masterTl
+      .to(
+        ".marquee-container",
+        {
+          opacity: 1,
+          duration: 0.6,
+          ease: "power3.out",
+        },
+        "-=1"
+      )
+      .to(
+        [asterisk1, asterisk2],
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          ease: "power3.out",
+        },
+        "-=0.4"
+      );
+
     if (asterisk1) {
       gsap.to(asterisk1, {
         rotate: 360,
@@ -69,14 +93,16 @@ export default function Marquee() {
     .join(" ");
 
   return (
-    <div className="flex-none relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full">
+    <div className="flex-none relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full opacity-0 marquee-container">
       <div className="max-w-screen hidden md:flex relative mx-auto z-80">
         <div
-          className="absolute -bottom-10 right-10 lg:right-32"
+          className="absolute -bottom-10 right-10 lg:right-32 opacity-0 scale-0"
           ref={asterisk1Ref}
+          onPointerEnter={() => gsap.to(asterisk1Ref.current, { scale: 1.2 })}
+          onPointerLeave={() => gsap.to(asterisk1Ref.current, { scale: 1 })}
         >
           <Image
-            className="w-32 lg:w-full pointer-none"
+            className="w-32 lg:w-full pointer-none "
             src="/asterisk.svg"
             alt="asterisk1"
             width={180}
@@ -86,8 +112,10 @@ export default function Marquee() {
           />
         </div>
         <div
-          className="absolute -bottom-20 left-10 lg:left-32"
+          className="absolute -bottom-20 left-10 lg:left-32 opacity-0 scale-0"
           ref={asterisk2Ref}
+          onPointerEnter={() => gsap.to(asterisk2Ref.current, { scale: 1.2 })}
+          onPointerLeave={() => gsap.to(asterisk2Ref.current, { scale: 1 })}
         >
           <Image
             className="w-32 lg:w-full pointer-none"
@@ -102,7 +130,7 @@ export default function Marquee() {
       </div>
 
       <div
-        className="overflow-hidden w-full"
+        className="overflow-hidden w-full "
         ref={marqueeContainerRef}
         aria-label="Marquee Swag Text"
         tabIndex={0}
