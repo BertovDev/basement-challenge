@@ -1,9 +1,12 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Cart from "./cart/Cart";
+import { useCartStore } from "@/store/cart";
 
 export default function Navbar() {
+  const { isOpen, toggleCart, getTotalQuantity } = useCartStore();
+
   return (
     <div className="flex justify-between  items-center py-6 px-6 md:px-12 ">
       <Link href={"/"}>
@@ -32,10 +35,13 @@ export default function Navbar() {
         width={284}
         height={284}
       />
-      <button className="bg-black uppercase cursor-pointer text-white text-sm md:text-lg md:px-12 px-6 py-2 text-center rounded-full border border-white">
+      <button
+        onClick={toggleCart}
+        className="bg-black uppercase cursor-pointer text-white text-sm md:text-lg md:px-12 px-6 py-2 text-center rounded-full border border-white"
+      >
         Cart
+        <span className="ml-1">({getTotalQuantity()})</span>
       </button>
-      <Cart />
     </div>
   );
 }

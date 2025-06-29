@@ -1,6 +1,6 @@
 import React from "react";
 import mockData from "../../products/data.json";
-import ProductItem from "./product-item";
+import ProductItem from "./ProductItem";
 
 export default function Products() {
   return (

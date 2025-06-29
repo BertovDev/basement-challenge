@@ -10,3 +10,10 @@ export type Product = {
 export type Size = {
   name: string;
 };
+
+export type CartItemType = {
+  id: number;
+  product: Product;
+  quantity: number;
+  sizeSelected: string;
+};
