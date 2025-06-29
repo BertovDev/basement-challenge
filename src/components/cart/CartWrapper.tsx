@@ -1,13 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
-import { Cart } from "./Cart";
+import Cart from "./Cart";
 import { useCartStore } from "@/store/cart";
 import gsap from "gsap";
 import { useRef } from "react";
 
-type Props = {};
-
-export default function CartWrapper({}: Props) {
+export default function CartWrapper() {
   const cartWrapperRef = useRef<HTMLDivElement>(null);
   const cartRef = useRef<HTMLDivElement>(null);
   const { isOpen, toggleCart } = useCartStore();

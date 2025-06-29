@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useCartStore } from "@/store/cart";
 
 export default function Navbar() {
-  const { isOpen, toggleCart, getTotalQuantity } = useCartStore();
+  const { toggleCart, getTotalQuantity } = useCartStore();
 
   return (
     <div className="flex justify-between  items-center py-6 px-6 md:px-12 ">

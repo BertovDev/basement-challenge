@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import CartItem from "@/components/cart/CartItem";
 import { useCartStore } from "@/store/cart";
 import { forwardRef } from "react";
 
-type Props = {};
-
-export const Cart = forwardRef<HTMLDivElement, Props>((_, ref) => {
+const Cart = forwardRef<HTMLDivElement>((_, ref) => {
   const { getTotalPrice, toggleCart, items, checkout } = useCartStore();
 
   const handleCheckout = () => {
@@ -99,3 +97,6 @@ export const Cart = forwardRef<HTMLDivElement, Props>((_, ref) => {
     </div>
   );
 });
+
+Cart.displayName = "Cart";
+export default Cart;
