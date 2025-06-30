@@ -59,9 +59,7 @@ export default function CheckoutModal({}: Props) {
         <div className="space-y-1 mb-4 text-xs w-full">
           <div className="flex justify-between">
             <span className="text-gray-600">Receipt No: </span>
-            <span className="font-bold text-white">
-              {getTotalQuantity() * getTotalPrice()}
-            </span>
+            <span className="font-bold text-white">SWA6</span>
           </div>
           <div className="flex justify-between">
             <span className="text-gray-600">Date:</span>

@@ -12,8 +12,8 @@ export const CardItemQuantityButton = ({ cartItemId, quantity }: Props) => {
   const minusButtonRef = useRef<HTMLButtonElement>(null);
   const plusButtonRef = useRef<HTMLButtonElement>(null);
 
-  useTextSwapHover(minusButtonRef);
-  useTextSwapHover(plusButtonRef);
+  useTextSwapHover(minusButtonRef, 0.4);
+  useTextSwapHover(plusButtonRef, 0.4);
 
   return (
     <div className="flex flex-row gap-x-1 2xl:p-2 2xl:gap-x-2 items-center border-1 border-white/80 px-[0.5px] rounded-full">

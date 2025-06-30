@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import gsap from "gsap";
 
 export function useTextSwapHover(
-  ref: React.RefObject<HTMLButtonElement | null>
+  ref: React.RefObject<HTMLButtonElement | HTMLDivElement | null>,
+  duration: number
 ) {
   useEffect(() => {
     if (!ref.current) return;
@@ -21,7 +22,7 @@ export function useTextSwapHover(
       topText,
       {
         yPercent: -100,
-        duration: 0.4,
+        duration: duration,
         ease: "power2.out",
       },
       0
@@ -29,7 +30,7 @@ export function useTextSwapHover(
       bottomText,
       {
         yPercent: 0,
-        duration: 0.4,
+        duration: duration,
         ease: "power2.out",
       },
       0

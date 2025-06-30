@@ -13,7 +13,7 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
   const { toggleCheckoutModal } = useCheckoutModalStore();
   const cartButtonRef = useRef<HTMLButtonElement>(null);
   const checkoutButtonRef = useRef<HTMLButtonElement>(null);
-  useTextSwapHover(cartButtonRef);
+  useTextSwapHover(cartButtonRef, 0.4);
 
   useEffect(() => {
     const split = SplitText.create(".checkout-button", {
