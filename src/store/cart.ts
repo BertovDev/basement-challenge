@@ -17,6 +17,11 @@ type CartState = {
   checkout: () => void;
 };
 
+type CheckoutModalState = {
+  isOpen: boolean;
+  toggleCheckoutModal: () => void;
+};
+
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
@@ -88,3 +93,9 @@ export const useCartStore = create<CartState>()(
     }
   )
 );
+
+export const useCheckoutModalStore = create<CheckoutModalState>()((set) => ({
+  isOpen: false,
+  toggleCheckoutModal: () =>
+    set((state: CheckoutModalState) => ({ isOpen: !state.isOpen })),
+}));
