@@ -10,8 +10,9 @@ type Props = {
 
 export default function ProductItem({ product }: Props) {
   const { toggleCart, addToCart } = useCartStore();
+
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#1f1f1f] hover:cursor-pointer group mb-12">
+    <div className="product-item flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#1f1f1f] hover:cursor-pointer group mb-12">
       <div
         className="relative"
         onClick={() => {
