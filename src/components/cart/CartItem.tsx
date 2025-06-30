@@ -15,9 +15,11 @@ export default function CartItem({ item }: Props) {
         <Image
           className="object-contain"
           src={item.product.image}
-          alt="product"
+          alt="Product Image"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="flex w-4/6 p-1 md:p-0 2xl:p-3  flex-col justify-evenly sm:justify-end gap-y-2 sm:gap-y-5  lg:justify-between ">

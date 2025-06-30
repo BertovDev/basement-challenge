@@ -58,7 +58,7 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
       aria-label="Cart"
       ref={ref}
       className="fixed right-0 top-0 w-full h-full lg:w-[56vw] lg:h-4/5 z-100 bg-black
-     border-1 border-t-0 border-r-0 border-white/80 "
+     border-1 border-t-0 border-r-0 border-white/80"
     >
       <div className="flex flex-col pt-6 2xl:pt-8 px-6 lg:px-0 text-center w-full h-full ">
         <div className="flex flex-col h-full">

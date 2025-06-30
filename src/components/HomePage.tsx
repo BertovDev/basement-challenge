@@ -15,16 +15,14 @@ export default function HomePage() {
   const { isOpen } = useCheckoutModalStore();
 
   return (
-    <div>
+    <main>
       <Navbar masterTl={masterTl.current} />
       <CartWrapper />
       {isOpen && <CheckoutModal />}
-      <div className="flex flex-col min-h-screen">
-        <Hero masterTl={masterTl.current} />
-        <Marquee masterTl={masterTl.current} />
-        <Products masterTl={masterTl.current} />
-        <Footer />
-      </div>
-    </div>
+      <Hero masterTl={masterTl.current} />
+      <Marquee masterTl={masterTl.current} />
+      <Products masterTl={masterTl.current} />
+      <Footer />
+    </main>
   );
 }

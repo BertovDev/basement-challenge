@@ -60,7 +60,7 @@ export default function CartWrapper() {
   return (
     <div
       ref={cartWrapperRef}
-      className="absolute inset-0 hidden bg-black/50 z-90 "
+      className="fixed inset-0 hidden w-full h-full bg-black/50 z-100"
     >
       <Cart ref={cartRef} />
     </div>

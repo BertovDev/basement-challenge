@@ -97,5 +97,12 @@ export const useCartStore = create<CartState>()(
 export const useCheckoutModalStore = create<CheckoutModalState>()((set) => ({
   isOpen: false,
   toggleCheckoutModal: () =>
-    set((state: CheckoutModalState) => ({ isOpen: !state.isOpen })),
+    set((state: CheckoutModalState) => {
+      if (!state.isOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+      return { isOpen: !state.isOpen };
+    }),
 }));

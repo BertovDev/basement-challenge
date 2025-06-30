@@ -68,7 +68,7 @@ export default function Navbar({ masterTl }: Props) {
   }, []);
 
   return (
-    <div className="navbar sticky top-0 z-100 bg-black/90 mix-blend-normal backdrop-blur-lg  flex justify-between  items-center py-6 px-6 md:px-12 ">
+    <div className="navbar sticky top-0 z-90 bg-black/90 mix-blend-normal backdrop-blur-lg  flex justify-between  items-center py-6 px-6 md:px-12 ">
       <Link className="" href={"/"}>
         <div
           className="relative  overflow-hidden h-10 w-52 hidden md:block"
