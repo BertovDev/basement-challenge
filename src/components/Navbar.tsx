@@ -1,15 +1,21 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCartStore } from "@/store/cart";
+import gsap from "gsap";
+import { useTextSwapHover } from "@/hooks/useTextSwapHover";
 
 type Props = {
   masterTl: gsap.core.Timeline;
 };
 
 export default function Navbar({ masterTl }: Props) {
+  const cartButtonRef = useRef<HTMLButtonElement>(null);
+  const navImageRef = useRef<HTMLImageElement>(null);
   const { toggleCart, getTotalQuantity } = useCartStore();
+
+  useTextSwapHover(cartButtonRef);
 
   useEffect(() => {
     masterTl.to(".navbar", {
@@ -50,13 +56,24 @@ export default function Navbar({ masterTl }: Props) {
         alt="HD 4K"
         width={284}
         height={284}
+        ref={navImageRef}
       />
       <button
+        ref={cartButtonRef}
         onClick={toggleCart}
-        className="bg-black uppercase cursor-pointer text-white text-sm md:text-lg md:px-12 px-6 py-2 text-center rounded-full border border-white"
+        className="bg-black uppercase cursor-pointer text-white text-sm md:text-lg md:px-12 px-6 py-2 text-center rounded-full border border-white relative h-10 w-32 overflow-hidden"
       >
-        Cart
-        <span className="ml-1">({getTotalQuantity()})</span>
+        <span className="absolute inset-0 flex items-center justify-center top-text">
+          {" "}
+          Cart
+          <span className="ml-1">({getTotalQuantity()})</span>
+        </span>
+
+        <span className="absolute inset-0 flex items-center justify-center bottom-text ">
+          {" "}
+          Cart
+          <span className="ml-1">({getTotalQuantity()})</span>
+        </span>
       </button>
     </div>
   );

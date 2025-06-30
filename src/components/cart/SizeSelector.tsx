@@ -14,8 +14,8 @@ export default function SizeSelector({ size, isSelected, cartItemId }: Props) {
     <li
       onClick={() => setSizeSelected(size.name, cartItemId)}
       key={size.name}
-      className={`text-center text-xs sm:text-lg xl:text-xl 2xl:text-2xl cursor-pointer ${
-        isSelected ? "border-1 border-white/80 px-[0.5px] rounded-full" : ""
+      className={`text-center text-xs sm:text-lg xl:text-xl 2xl:text-2xl cursor-pointer hover:bg-zinc-800 rounded-full transition-all duration-200 px-[0.5px] border-1 ${
+        isSelected ? "border-white/80" : "border-transparent"
       }`}
     >
       <span className="p-1 sm:p-2 ">{size.name}</span>

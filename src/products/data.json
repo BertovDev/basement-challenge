@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "name": "Black t-shirt",
     "description": "The blackest black t-shirt",
     "price": 7.95,
@@ -20,13 +20,12 @@
       }
     ]
   },
-
   {
-    "id": "2",
-    "name": "Black Hoodie",
-    "description": "The blackest black hoodie",
-    "price": 13,
-    "image": "/products/hoodie.png",
+    "id": 2,
+    "name": "Black Cap",
+    "description": "The blackest black cap",
+    "price": 23,
+    "image": "/products/cap.png",
     "sizes": [
       {
         "name": "S"
@@ -43,11 +42,11 @@
     ]
   },
   {
-    "id": "3",
-    "name": "Black Cap",
-    "description": "The blackest black cap",
-    "price": 23,
-    "image": "/products/cap.png",
+    "id": 3,
+    "name": "Black Hoodie",
+    "description": "The blackest black hoodie",
+    "price": 13,
+    "image": "/products/hoodie.png",
     "sizes": [
       {
         "name": "S"
