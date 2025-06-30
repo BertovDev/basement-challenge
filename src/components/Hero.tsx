@@ -72,13 +72,13 @@ export default function Hero({ masterTl }: Props) {
         Basement
       </h1>
       <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-6  justify-center ">
-        <div className="opacity-0 est-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[12vw] max-w-36 flex items-center justify-center ">
+        <div className="opacity-0 est-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[10vw] max-w-36 flex items-center justify-center ">
           EST
         </div>
         <h1 className="opacity-0 supply-title uppercase text-[16vw] whitespace-nowrap leading-[0.9] ">
           Supply
         </h1>
-        <div className="opacity-0 year-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[12vw] max-w-36 flex items-center justify-center  ">
+        <div className="opacity-0 year-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[10vw] max-w-36 flex items-center justify-center  ">
           2 <span className="year-k-char">K</span> 22
         </div>
       </div>
