@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
 import { useCartStore, useCheckoutModalStore } from "@/store/cart";
 import { CartItemType } from "@/types";
-import Image from "next/image";
-import CartItem from "./CartItem";
-import ProductItem from "../products/ProductItem";
 
-interface Props {}
-
-export default function CheckoutModal({}: Props) {
-  const { getTotalQuantity, checkout, items, getTotalPrice } = useCartStore();
+export default function CheckoutModal() {
+  const { checkout, items, getTotalPrice } = useCartStore();
   const { toggleCheckoutModal } = useCheckoutModalStore();
 
   const handleClose = () => {
