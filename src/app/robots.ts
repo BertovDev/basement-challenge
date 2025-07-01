@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://basement-challenge-nu.vercel.app/sitemap.xml",
+    sitemap: "https://basement-challenge-berto-bautista.vercel.app/sitemap.xml",
   };
 }
