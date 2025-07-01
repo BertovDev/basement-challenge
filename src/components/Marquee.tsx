@@ -93,7 +93,7 @@ export default function Marquee({ masterTl }: Props) {
     .join(" ");
 
   return (
-    <div className="flex-none relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full opacity-0 marquee-container">
+    <section className="flex-none relative  mt-4 md:mt-0 border-y-2 py-1 md:py-4 w-full opacity-0 marquee-container">
       <div className="max-w-screen hidden md:flex relative mx-auto z-80">
         <div
           className="absolute -bottom-2 right-10 lg:right-32 opacity-0 scale-0"
@@ -144,6 +144,6 @@ export default function Marquee({ masterTl }: Props) {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

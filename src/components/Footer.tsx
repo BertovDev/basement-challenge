@@ -89,11 +89,9 @@ export default function Footer() {
   }, []);
 
   return (
-    <div
+    <footer
       ref={footerRef}
       className="flex-none py-6 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden "
-      tabIndex={0}
-      aria-label="Footer section"
     >
       <div className="flex flex-row items-center justify-end gap-x-10 will-change-transform">
         <Image
@@ -113,6 +111,6 @@ export default function Footer() {
       <p className=" uppercase text-[15.4vw] text-outline-white whitespace-nowrap will-change-transform letter-spacing-[0.1em] everyday-text">
         EVERYDAY
       </p>
-    </div>
+    </footer>
   );
 }
