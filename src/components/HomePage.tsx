@@ -2,14 +2,14 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-import Marquee from "./Marquee";
+import MarqueeSection from "./MarqueeSection";
 import Footer from "./Footer";
 import Products from "./products/Products";
 import CartWrapper from "./cart/CartWrapper";
 import CheckoutModal from "./cart/CheckoutModal";
 import Loader from "./Loader";
-import { useCheckoutModalStore } from "@/store/cart";
 
+import { useCheckoutModalStore } from "@/store/cart";
 import gsap from "gsap";
 
 export default function HomePage() {
@@ -31,7 +31,7 @@ export default function HomePage() {
           <CartWrapper />
           {isOpen && <CheckoutModal />}
           <Hero masterTl={masterTl.current} />
-          <Marquee masterTl={masterTl.current} />
+          <MarqueeSection masterTl={masterTl.current} />
           <Products masterTl={masterTl.current} />
           <Footer />
         </>

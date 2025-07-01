@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import MarqueeComponent from "./Marquee";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Footer() {
@@ -74,15 +75,25 @@ export default function Footer() {
           },
         },
         "-=0.5"
-      ).to(
-        figureRef.current,
-        {
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-        },
-        "-=0.3"
-      );
+      )
+        .to(
+          figureRef.current,
+          {
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.3"
+        )
+        .to(
+          ".marquee-wrapper",
+          {
+            opacity: 1,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.8"
+        );
     }, footerRef);
 
     return () => ctx.revert();
@@ -91,7 +102,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="flex-none py-6 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden "
+      className="flex-none pt-4 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden "
     >
       <div className="flex flex-row items-center justify-end gap-x-10 will-change-transform">
         <Image
@@ -104,13 +115,19 @@ export default function Footer() {
           loading="lazy"
           decoding="async"
         />
-        <h3 className=" text-[15vw] will-change-transform letter-spacing-[0.1em] wear-text">
+        <h3 className=" text-[15vw] will-change-transform letter-spacing-[0.1em] wear-text whitespace-nowrap">
           WEAR
         </h3>
       </div>
       <h4 className=" uppercase text-[15.4vw] text-outline-white whitespace-nowrap will-change-transform letter-spacing-[0.1em] everyday-text">
         EVERYDAY
       </h4>
+      <div className="w-full cursor-pointer opacity-0 marquee-wrapper">
+        <MarqueeComponent
+          marqueeText=" — 50% OFF — Only on Friday Prod Deploys"
+          textStyle="text-xl sm:text-2xl uppercase text-white/40"
+        />
+      </div>
     </footer>
   );
 }
