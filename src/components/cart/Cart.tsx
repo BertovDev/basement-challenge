@@ -58,20 +58,20 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
       aria-label="Cart"
       ref={ref}
       className="fixed right-0 top-0 w-full h-full lg:w-[56vw] lg:h-4/5 z-100 bg-black
-     border-1 border-t-0 border-r-0 border-white/80 "
+     border-1 border-t-0 border-r-0 border-white/80"
     >
       <div className="flex flex-col pt-6 2xl:pt-8 px-6 lg:px-0 text-center w-full h-full ">
         <div className="flex flex-col h-full">
-          <div className="flex-none ml-auto mb-6 2xl:mb-8 lg:px-6 2xl:px-12  xl:text-2xl 2xl:text-3xl">
+          <div className="flex-none ml-auto mb-6 2xl:mb-8 lg:px-6 2xl:px-10  xl:text-2xl 2xl:text-3xl">
             <button
               onClick={toggleCart}
               ref={cartButtonRef}
-              className="cursor-pointer uppercase relative h-10 w-40 overflow-hidden"
+              className="cursor-pointer uppercase relative h-10 w-42 overflow-hidden"
             >
-              <span className="absolute inset-0 flex  items-center justify-center top-text">
+              <span className="absolute inset-0 flex  items-center justify-end top-text text-2xl lg:text-2xl">
                 → Close
               </span>
-              <span className="absolute inset-0 flex items-center justify-center bottom-text">
+              <span className="absolute inset-0 flex items-center justify-end bottom-text text-2xl lg:text-2xl">
                 → Close
               </span>
             </button>
@@ -103,17 +103,17 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
           </div>
 
           {/* Desktop */}
-          <div className="hidden lg:grid flex-none grid-cols-3 border-t-1 border-white/80 ">
-            <div className="col-span-2 px-8 py-6 flex gap-x-4 items-center justify-start border-r-1 border-white/80">
+          <div className="hidden lg:grid flex-none grid-cols-5 border-t-1 border-white/80 ">
+            <div className="col-span-3 px-5 py-6 flex gap-x-4 items-center justify-start border-r-1 border-white/80">
               <span className="text-xl lg:text-2xl xl:text-5xl">TOTAL</span>
               <span className="text-xl lg:text-2xl xl:text-5xl">
                 ${getTotalPrice()}
               </span>
             </div>
-            <div className="col-span-1 flex  items-center justify-center">
+            <div className="col-span-2 flex items-center  justify-center">
               <button
                 ref={checkoutButtonRef}
-                className="cursor-pointer text-xl lg:text-2xl tracking-wider xl:text-4xl 2xl:text-5xl text-outline-white checkout-button disabled:cursor-not-allowed"
+                className="cursor-pointer text-xl lg:text-2xl tracking-wide xl:text-4xl 2xl:text-5xl text-outline-white checkout-button disabled:cursor-not-allowed"
                 onClick={handleCheckout}
                 disabled={items.length === 0}
                 aria-label="Checkout"
@@ -133,7 +133,7 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
             </div>
             <div className="w-full py-2 flex  items-center justify-center">
               <button
-                className="cursor-pointer text-4xl xs:text-5xl md:text-7xl pt-2 tracking-wider text-outline-white "
+                className="cursor-pointer text-6xl xs:text-7xl md:text-7xl pt-2 tracking-wider text-outline-white "
                 onClick={handleCheckout}
                 disabled={items.length === 0}
                 aria-label="Checkout"

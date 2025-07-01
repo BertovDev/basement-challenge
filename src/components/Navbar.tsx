@@ -12,6 +12,7 @@ type Props = {
 };
 
 export default function Navbar({ masterTl }: Props) {
+  const hasAnimated = useRef(false);
   const cartButtonRef = useRef<HTMLButtonElement>(null);
   const navImageRef = useRef<HTMLImageElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
@@ -21,6 +22,8 @@ export default function Navbar({ masterTl }: Props) {
   useTextSwapHover(logoRef, 0.3);
 
   useEffect(() => {
+    if (hasAnimated.current) return;
+    hasAnimated.current = true;
     const splitLogo = SplitText.create(".basement-logo", {
       type: "chars",
     });
@@ -65,14 +68,23 @@ export default function Navbar({ masterTl }: Props) {
   }, []);
 
   return (
-    <div className="navbar  flex justify-between  items-center py-6 px-6 md:px-12 ">
+    <header className="navbar h-20 sticky top-0 z-90 bg-black/90 mix-blend-normal backdrop-blur-lg  flex justify-between  items-center py-6 px-6 md:px-12 ">
       <Link className="" href={"/"}>
-        <div className="relative  overflow-hidden h-10 w-52" ref={logoRef}>
+        <div
+          className="relative  overflow-hidden h-10 w-52 hidden md:block"
+          ref={logoRef}
+        >
           <span className="absolute opacity-0  inset-0 flex items-center justify-start top-text text-4xl basement-logo">
             basement.
           </span>
           <span className="opacity-0 navbar-item absolute inset-0 flex items-center justify-start bottom-text text-4xl">
             swagg
+          </span>
+        </div>
+
+        <div className="relative  overflow-hidden h-10 w-52 block md:hidden">
+          <span className="absolute opacity-0  inset-0 flex items-center justify-start text-4xl basement-logo">
+            b.
           </span>
         </div>
 
@@ -83,8 +95,8 @@ export default function Navbar({ masterTl }: Props) {
           width={192}
           height={192}
           loading="lazy"
-        />
-        <Image
+        /> */}
+        {/* <Image
           className="block md:hidden"
           src="/logo_mobile.svg"
           alt="Logo"
@@ -101,6 +113,7 @@ export default function Navbar({ masterTl }: Props) {
         width={284}
         height={284}
         ref={navImageRef}
+        priority
       />
       <button
         ref={cartButtonRef}
@@ -119,6 +132,6 @@ export default function Navbar({ masterTl }: Props) {
           <span className="ml-1">({getTotalQuantity()})</span>
         </span>
       </button>
-    </div>
+    </header>
   );
 }

@@ -35,7 +35,6 @@ export default function ProductItem({ product }: Props) {
           alt={product.name}
           width={500}
           height={500}
-          loading="lazy"
         />
       </div>
       <div className="flex flex-row justify-between w-full bg-black py-4 border-t-2 border-white">

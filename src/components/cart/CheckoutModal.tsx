@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useCartStore, useCheckoutModalStore } from "@/store/cart";
 import { CartItemType } from "@/types";
 
 export default function CheckoutModal() {
+  const modalRef = useRef<HTMLDivElement>(null);
   const { checkout, items, getTotalPrice } = useCartStore();
-  const { toggleCheckoutModal } = useCheckoutModalStore();
+  const { toggleCheckoutModal, isOpen } = useCheckoutModalStore();
 
   const handleClose = () => {
     toggleCheckoutModal();
@@ -19,7 +20,7 @@ export default function CheckoutModal() {
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (event.target === event.currentTarget) {
+      if (event.target === modalRef.current) {
         handleClose();
       }
     };
@@ -31,14 +32,17 @@ export default function CheckoutModal() {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full bg-black/30 backdrop-blur-xs z-100 flex items-center justify-center">
+    <div
+      className="fixed inset-0 w-full h-full bg-black/30  z-100 flex items-center justify-center"
+      ref={modalRef}
+    >
       <div className="px-6 py-6 bg-black z-100 border-1 border-white/20 rounded-[10px] flex items-center justify-center flex-col">
         <button
           onClick={handleClose}
-          className="ml-auto relative -top-4 -right-2 text-white cursor-pointer hover:scale-120 transition-all duration-150"
+          className="ml-auto relative -top-4 -right-2 text-white cursor-pointer hover:text-zinc-400 transition-all duration-150"
         >
           x
         </button>

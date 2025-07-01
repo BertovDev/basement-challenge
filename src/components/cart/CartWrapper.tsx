@@ -30,12 +30,12 @@ export default function CartWrapper() {
         cartRef.current,
         {
           opacity: 0,
-          x: 100,
+          xPercent: 50,
         },
         {
           opacity: 1,
-          x: 0,
-          duration: 0.5,
+          xPercent: 0,
+          duration: 1,
           ease: "power3.out",
         }
       );
@@ -44,9 +44,8 @@ export default function CartWrapper() {
       document.removeEventListener("click", handkleClickOutside);
       gsap.to(cartWrapperRef.current, { opacity: 0, display: "none" });
       gsap.to(cartRef.current, {
-        opacity: 0,
-        x: 100,
-        duration: 0.5,
+        xPercent: 50,
+        duration: 1,
         ease: "power3.out",
       });
     }
@@ -60,7 +59,7 @@ export default function CartWrapper() {
   return (
     <div
       ref={cartWrapperRef}
-      className="absolute inset-0 hidden bg-black/50 z-90 "
+      className="fixed inset-0 hidden w-full h-full bg-black/50 z-100"
     >
       <Cart ref={cartRef} />
     </div>
