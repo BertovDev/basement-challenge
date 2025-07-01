@@ -4,7 +4,7 @@
     "name": "Black t-shirt",
     "description": "The blackest black t-shirt",
     "price": 7.95,
-    "image": "/products/shirt.png",
+    "image": "/products/shirt.webp",
     "sizes": [
       {
         "name": "S"
@@ -25,7 +25,7 @@
     "name": "Black Cap",
     "description": "The blackest black cap",
     "price": 23,
-    "image": "/products/cap.png",
+    "image": "/products/cap.webp",
     "sizes": [
       {
         "name": "S"
@@ -46,7 +46,7 @@
     "name": "Black Hoodie",
     "description": "The blackest black hoodie",
     "price": 13,
-    "image": "/products/hoodie.png",
+    "image": "/products/hoodie.webp",
     "sizes": [
       {
         "name": "S"
