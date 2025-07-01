@@ -68,10 +68,10 @@ export default function Navbar({ masterTl }: Props) {
   }, []);
 
   return (
-    <div className="navbar sticky top-0 z-90 bg-black/90 mix-blend-normal backdrop-blur-lg  flex justify-between  items-center py-6 px-6 md:px-12 ">
+    <div className="navbar sticky h-20 top-0 z-90 bg-black/90 mix-blend-normal backdrop-blur-lg  flex justify-between  items-center py-6 px-6 md:px-12 ">
       <Link className="" href={"/"}>
         <div
-          className="relative  overflow-hidden h-10 w-52 hidden md:block"
+          className="relative overflow-hidden h-10 w-52 hidden md:block"
           ref={logoRef}
         >
           <span className="absolute opacity-0  inset-0 flex items-center justify-start top-text text-4xl basement-logo">
@@ -113,6 +113,9 @@ export default function Navbar({ masterTl }: Props) {
         width={284}
         height={284}
         ref={navImageRef}
+        priority
+        placeholder="blur"
+        blurDataURL={"/hd-4k.svg"}
       />
       <button
         ref={cartButtonRef}

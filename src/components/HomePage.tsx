@@ -13,16 +13,29 @@ import { useCheckoutModalStore } from "@/store/cart";
 export default function HomePage() {
   const masterTl = useRef(gsap.timeline());
   const { isOpen } = useCheckoutModalStore();
+  const [fontLoaded, setFontLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontLoaded(true);
+    });
+  }, []);
 
   return (
     <main>
-      <Navbar masterTl={masterTl.current} />
-      <CartWrapper />
-      {isOpen && <CheckoutModal />}
-      <Hero masterTl={masterTl.current} />
-      <Marquee masterTl={masterTl.current} />
-      <Products masterTl={masterTl.current} />
-      <Footer />
+      {fontLoaded ? (
+        <>
+          <Navbar masterTl={masterTl.current} />
+          <CartWrapper />
+          {isOpen && <CheckoutModal />}
+          <Hero masterTl={masterTl.current} />
+          <Marquee masterTl={masterTl.current} />
+          <Products masterTl={masterTl.current} />
+          <Footer />
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
     </main>
   );
 }

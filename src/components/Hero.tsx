@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import "../app/globals.css";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
@@ -16,7 +15,10 @@ export default function Hero({ masterTl }: Props) {
     if (hasAnimated.current) return;
     hasAnimated.current = true;
 
-    gsap.set(".basement-title, .supply-title", { opacity: 1 });
+    gsap.set(".basement-title, .supply-title", {
+      opacity: 1,
+      visibility: "visible",
+    });
     const split = SplitText.create(".basement-title, .supply-title", {
       type: "chars",
     });
@@ -52,8 +54,9 @@ export default function Hero({ masterTl }: Props) {
     );
 
     masterTl
-      .to(".est-text, .year-text, .year-k-char", {
+      .to([".est-text", ".year-text", ".year-k-char"], {
         opacity: 1,
+        visibility: "visible",
         duration: 0.6,
         ease: "power3.out",
       })
@@ -64,24 +67,27 @@ export default function Hero({ masterTl }: Props) {
         duration: 0.2,
         ease: "back.inOut",
       });
-  }, []);
+  }, [masterTl]);
 
   return (
-    <div className="hero-text flex-none px-6 md:px-12 text-center mt-6 md:mt-14 flex flex-col items-center justify-center pointer-events-none">
-      <h1 className="opacity-0 basement-title uppercase text-[14.7vw] whitespace-nowrap leading-[0.8]">
+    <section className="min-h-[20vh] md:min-h-[35vh] lg:min-h-[40vh] xl:min-h-[60vh] flex-none  flex flex-col items-center justify-center pointer-events-none">
+      <h1 className=" invisible opacity-0 basement-title uppercase text-[14.7vw] whitespace-nowrap leading-[0.8]">
         Basement
       </h1>
-      <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-6  justify-center ">
-        <div className="opacity-0 est-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[10vw] max-w-36 flex items-center justify-center ">
+      <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-6 justify-center">
+        <div className=" invisible opacity-0 est-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[10vw] max-w-36 flex items-center justify-center">
           EST
         </div>
-        <h1 className="opacity-0 supply-title uppercase text-[16vw] whitespace-nowrap leading-[0.9] ">
+        <span
+          className="invisible opacity-0 supply-title uppercase text-[16vw] whitespace-nowrap leading-[0.9]"
+          role="text"
+        >
           Supply
-        </h1>
-        <div className="opacity-0 year-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[10vw] max-w-36 flex items-center justify-center  ">
+        </span>
+        <div className="invisible opacity-0 year-text rounded-[50%] text-[1.4vw] border-1 border-white py-2 w-[10vw] max-w-36 flex items-center justify-center">
           2 <span className="year-k-char">K</span> 22
         </div>
       </div>
-    </div>
+    </section>
   );
 }

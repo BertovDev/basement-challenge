@@ -92,10 +92,8 @@ export default function Footer() {
     <div
       ref={footerRef}
       className="flex-none py-6 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden "
-      tabIndex={0}
-      aria-label="Footer section"
     >
-      <div className="flex flex-row items-center justify-end gap-x-10 will-change-transform">
+      <div className="flex flex-row items-center justify-end gap-x-10 ">
         <Image
           className="w-[15vw] opacity-0"
           src="/footer_figure.svg"
@@ -106,11 +104,9 @@ export default function Footer() {
           loading="lazy"
           decoding="async"
         />
-        <p className=" text-[15vw] will-change-transform letter-spacing-[0.1em] wear-text">
-          WEAR
-        </p>
+        <p className=" text-[15vw]  letter-spacing-[0.1em] wear-text">WEAR</p>
       </div>
-      <p className=" uppercase text-[15.4vw] text-outline-white whitespace-nowrap will-change-transform letter-spacing-[0.1em] everyday-text">
+      <p className=" uppercase text-[15.4vw] text-outline-white whitespace-nowrap  letter-spacing-[0.1em] everyday-text">
         EVERYDAY
       </p>
     </div>
