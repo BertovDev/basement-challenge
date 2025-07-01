@@ -7,6 +7,22 @@
   }
 }
 
+@layer components {
+  .loader {
+    @apply opacity-0;
+    animation: loader-anim 0.5s ease-in-out forwards;
+  }
+}
+
+@keyframes loader-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 html,
 body {
   color: white;
