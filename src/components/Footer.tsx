@@ -95,7 +95,7 @@ export default function Footer() {
     >
       <div className="flex flex-row items-center justify-end gap-x-10 will-change-transform">
         <Image
-          className="w-[15vw] opacity-0"
+          className="w-[20vw] opacity-0"
           src="/footer_figure.svg"
           ref={figureRef}
           alt="Logo"
