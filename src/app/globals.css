@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import "../../assets/fonts/basement-grotesque.css";
-
 @layer utilities {
   .text-outline-white {
     @apply text-black;
@@ -11,7 +9,6 @@
 
 html,
 body {
-  font-family: "Basement Grotesque";
   color: white;
   background-color: black;
   padding: 0;

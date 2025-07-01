@@ -16,7 +16,6 @@ export default function Products({ masterTl }: Props) {
       ".product-item",
       itemsContainer.current
     );
-    console.log(items);
     gsap.set(items, { opacity: 0, y: 50 });
 
     masterTl

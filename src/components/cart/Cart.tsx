@@ -62,16 +62,16 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
     >
       <div className="flex flex-col pt-6 2xl:pt-8 px-6 lg:px-0 text-center w-full h-full ">
         <div className="flex flex-col h-full">
-          <div className="flex-none ml-auto mb-6 2xl:mb-8 lg:px-6 2xl:px-12  xl:text-2xl 2xl:text-3xl">
+          <div className="flex-none ml-auto mb-6 2xl:mb-8 lg:px-6 2xl:px-10  xl:text-2xl 2xl:text-3xl">
             <button
               onClick={toggleCart}
               ref={cartButtonRef}
-              className="cursor-pointer uppercase relative h-10 w-40 overflow-hidden"
+              className="cursor-pointer uppercase relative h-10 w-42 overflow-hidden"
             >
-              <span className="absolute inset-0 flex  items-center justify-center top-text">
+              <span className="absolute inset-0 flex  items-center justify-end top-text text-2xl lg:text-2xl">
                 → Close
               </span>
-              <span className="absolute inset-0 flex items-center justify-center bottom-text">
+              <span className="absolute inset-0 flex items-center justify-end bottom-text text-2xl lg:text-2xl">
                 → Close
               </span>
             </button>

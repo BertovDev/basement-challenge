@@ -113,6 +113,7 @@ export default function Navbar({ masterTl }: Props) {
         width={284}
         height={284}
         ref={navImageRef}
+        priority
       />
       <button
         ref={cartButtonRef}
