@@ -104,13 +104,13 @@ export default function Footer() {
           loading="lazy"
           decoding="async"
         />
-        <p className=" text-[15vw] will-change-transform letter-spacing-[0.1em] wear-text">
+        <h3 className=" text-[15vw] will-change-transform letter-spacing-[0.1em] wear-text">
           WEAR
-        </p>
+        </h3>
       </div>
-      <p className=" uppercase text-[15.4vw] text-outline-white whitespace-nowrap will-change-transform letter-spacing-[0.1em] everyday-text">
+      <h4 className=" uppercase text-[15.4vw] text-outline-white whitespace-nowrap will-change-transform letter-spacing-[0.1em] everyday-text">
         EVERYDAY
-      </p>
+      </h4>
     </footer>
   );
 }
