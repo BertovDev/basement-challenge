@@ -57,6 +57,7 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
       aria-modal="true"
       aria-label="Cart"
       ref={ref}
+      tabIndex={-1}
       className="fixed right-0 top-0 w-full h-full lg:w-[56vw] lg:h-4/5 z-100 bg-black
      border-1 border-t-0 border-r-0 border-white/80"
     >

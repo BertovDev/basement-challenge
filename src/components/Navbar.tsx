@@ -90,24 +90,6 @@ export default function Navbar({ masterTl }: Props) {
             b.
           </span>
         </div>
-
-        {/* <Image
-          className="hidden md:block"
-          src="/logo.svg"
-          alt="Logo"
-          width={192}
-          height={192}
-          loading="lazy"
-        /> */}
-        {/* <Image
-          className="block md:hidden"
-          src="/logo_mobile.svg"
-          alt="Logo"
-          width={32}
-          height={32}
-          loading="lazy"
-          decoding="async"
-        /> */}
       </Link>
       <Image
         className="hidden md:block opacity-0 navbar-item"

@@ -14,6 +14,7 @@ function scrollToProducts() {
     top: productsSection.offsetTop - 120,
     behavior: "smooth",
   });
+  productsSection.focus();
 }
 
 export default function Footer() {
@@ -112,7 +113,8 @@ export default function Footer() {
     <footer
       id="footer"
       ref={footerRef}
-      className="flex-none pt-4 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden "
+      className="flex-none pt-4 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden focus:outline-none"
+      tabIndex={0}
     >
       <div className="flex flex-row items-center justify-end gap-x-10 will-change-transform">
         <Image
@@ -135,6 +137,12 @@ export default function Footer() {
       <div
         onClick={scrollToProducts}
         className="w-full cursor-pointer opacity-0 marquee-wrapper"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            scrollToProducts();
+          }
+        }}
       >
         <MarqueeComponent
           marqueeText=" — 50% OFF — Only on Friday Prod Deploys"

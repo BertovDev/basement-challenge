@@ -71,7 +71,10 @@ export default function Hero({ masterTl }: Props) {
       id="hero"
       className="hero-text flex-none px-6 md:px-12 text-center mt-6 md:mt-14 flex flex-col items-center justify-center pointer-events-none"
     >
-      <h1 className="opacity-0 basement-title uppercase text-[14.7vw] whitespace-nowrap leading-[0.8]">
+      <h1
+        className="opacity-0 basement-title uppercase text-[14.7vw] whitespace-nowrap leading-[0.8]"
+        tabIndex={0}
+      >
         Basement
       </h1>
       <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-6  justify-center ">
