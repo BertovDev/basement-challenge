@@ -68,7 +68,10 @@ export default function Navbar({ masterTl }: Props) {
   }, []);
 
   return (
-    <header className="navbar h-20 sticky top-0 z-90 bg-black/90 mix-blend-normal backdrop-blur-lg  flex justify-between  items-center py-6 px-6 md:px-12 ">
+    <header
+      id="navbar"
+      className="navbar h-20 sticky top-0 z-90 bg-black/90 mix-blend-normal backdrop-blur-lg  flex justify-between  items-center py-6 px-6 md:px-12"
+    >
       <Link className="" href={"/"}>
         <div
           className="relative  overflow-hidden h-10 w-52 hidden md:block"

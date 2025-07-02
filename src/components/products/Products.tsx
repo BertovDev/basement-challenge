@@ -41,7 +41,10 @@ export default function Products({ masterTl }: Props) {
   }, []);
 
   return (
-    <section className="grow px-6 md:px-12 flex flex-col items-center justify-between mt-10">
+    <section
+      id="products"
+      className="grow px-6 md:px-12 flex flex-col items-center justify-between mt-10"
+    >
       <div
         className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full items-container opacity-0"
         ref={itemsContainer}

@@ -7,6 +7,15 @@ import { SplitText } from "gsap/SplitText";
 import MarqueeComponent from "./Marquee";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+function scrollToProducts() {
+  const productsSection = document.getElementById("products");
+  if (!productsSection) return;
+  window.scrollTo({
+    top: productsSection.offsetTop - 120,
+    behavior: "smooth",
+  });
+}
+
 export default function Footer() {
   const figureRef = useRef<HTMLImageElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
@@ -101,6 +110,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="footer"
       ref={footerRef}
       className="flex-none pt-4 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden "
     >
@@ -122,7 +132,10 @@ export default function Footer() {
       <h4 className=" uppercase text-[15.4vw] text-outline-white whitespace-nowrap will-change-transform letter-spacing-[0.1em] everyday-text">
         EVERYDAY
       </h4>
-      <div className="w-full cursor-pointer opacity-0 marquee-wrapper">
+      <div
+        onClick={scrollToProducts}
+        className="w-full cursor-pointer opacity-0 marquee-wrapper"
+      >
         <MarqueeComponent
           marqueeText=" — 50% OFF — Only on Friday Prod Deploys"
           textStyle="text-xl sm:text-2xl uppercase text-white/40"
