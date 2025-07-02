@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Product } from "../../types";
 import Image from "next/image";
 import { useCartStore } from "@/store/cart";
@@ -8,9 +8,23 @@ type Props = {
   product: Product;
 };
 
+let lastInputWasKeyboard = false;
+if (typeof window !== "undefined") {
+  window.addEventListener("keydown", () => {
+    lastInputWasKeyboard = true;
+  });
+  window.addEventListener("mousedown", () => {
+    lastInputWasKeyboard = false;
+  });
+  window.addEventListener("pointerdown", () => {
+    lastInputWasKeyboard = false;
+  });
+}
+
 const ProductItem = React.forwardRef<HTMLDivElement, Props>(
   ({ product }, ref) => {
     const { toggleCart, addToCart } = useCartStore();
+    const [showFocusRing, setShowFocusRing] = useState(false);
 
     const handleClick = () => {
       addToCart(product);
@@ -20,7 +34,9 @@ const ProductItem = React.forwardRef<HTMLDivElement, Props>(
     return (
       <div
         ref={ref}
-        className={`product-item flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#1f1f1f] hover:cursor-pointer group mb-12 outline-none transition-shadow focus:ring-2 focus:ring-white/40 focus:shadow-lg`}
+        className={`product-item flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#1f1f1f] hover:cursor-pointer group mb-12 outline-none transition-shadow ${
+          showFocusRing ? "ring-2 ring-white/40 shadow-lg" : ""
+        }`}
         tabIndex={0}
         aria-label={`Product: ${product.name}, Price: $${product.price}`}
         onClick={handleClick}
@@ -29,6 +45,10 @@ const ProductItem = React.forwardRef<HTMLDivElement, Props>(
             handleClick();
           }
         }}
+        onFocus={(e) => {
+          setShowFocusRing(lastInputWasKeyboard);
+        }}
+        onBlur={() => setShowFocusRing(false)}
         role="button"
       >
         <div className="relative">
