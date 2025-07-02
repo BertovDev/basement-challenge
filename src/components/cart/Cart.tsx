@@ -133,7 +133,7 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
             </div>
             <div className="w-full py-2 flex  items-center justify-center">
               <button
-                className="cursor-pointer text-6xl xs:text-7xl md:text-7xl pt-2 tracking-wider text-outline-white "
+                className="cursor-pointer text-5xl xs:text-7xl md:text-7xl pt-2 tracking-wider text-outline-white "
                 onClick={handleCheckout}
                 disabled={items.length === 0}
                 aria-label="Checkout"
