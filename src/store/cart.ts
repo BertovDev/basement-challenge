@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { CartItemType, Product } from "../types";
+import { useRef } from "react";
 
 type CartState = {
   items: CartItemType[];
@@ -110,3 +111,9 @@ export const useCheckoutModalStore = create<CheckoutModalState>()((set) => ({
       return { isOpen: !state.isOpen };
     }),
 }));
+
+export let lastFocusRef: HTMLElement | null = null;
+
+export const setLastFocusRef = (ref: HTMLElement) => {
+  lastFocusRef = ref;
+};
