@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { CartItemType, Product } from "../types";
-import { useRef } from "react";
 
 type CartState = {
   items: CartItemType[];
