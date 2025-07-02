@@ -91,11 +91,11 @@ const Cart = forwardRef<HTMLDivElement>((_, ref) => {
               ) : (
                 <div className="flex flex-col items-center justify-center">
                   <p
-                    className="text-2xl uppercase text-center text-white/60"
+                    className="text-[10vw] md:text-[8vw] lg:text-[5vw]  text-outline-white uppercase text-center "
                     tabIndex={0}
                     aria-label="Cart is empty"
                   >
-                    Cart is empty
+                    is empty <span className="text-white">:(</span>
                   </p>
                 </div>
               )}
