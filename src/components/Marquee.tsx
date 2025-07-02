@@ -53,7 +53,6 @@ export default function Marquee({ marqueeText, textStyle }: Props) {
       className="overflow-hidden w-full relative"
       ref={marqueeContainerRef}
       aria-label="Marquee Swag Text"
-      tabIndex={0}
     >
       <div className="absolute left-0 top-0 w-32 h-10 bg-gradient-to-r from-black to-transparent z-10"></div>
       <div className="absolute right-0 top-0 w-32 h-10 bg-gradient-to-l from-black to-transparent z-10"></div>

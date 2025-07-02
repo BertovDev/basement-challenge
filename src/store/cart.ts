@@ -80,9 +80,13 @@ export const useCartStore = create<CartState>()(
         });
       },
       getTotalPrice: () =>
-        get().items.reduce(
-          (acc, item) => acc + item.product.price * item.quantity,
-          0
+        parseFloat(
+          get()
+            .items.reduce(
+              (acc, item) => acc + item.product.price * item.quantity,
+              0
+            )
+            .toFixed(2)
         ),
       checkout: () => {
         set(() => ({ items: [] }));
