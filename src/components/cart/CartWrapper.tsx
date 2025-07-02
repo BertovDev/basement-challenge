@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Cart from "./Cart";
-import { useCartStore } from "@/store/cart";
+import { useCartStore, lastFocusRef, setLastFocusRef } from "@/store/cart";
 import gsap from "gsap";
 
 export default function CartWrapper() {
@@ -41,6 +41,8 @@ export default function CartWrapper() {
           ease: "power3.out",
           delay: 0.1,
           onComplete: () => {
+            if (!document.activeElement) return;
+            setLastFocusRef(document.activeElement as HTMLElement);
             cartRef.current?.focus();
           },
         }
@@ -58,6 +60,10 @@ export default function CartWrapper() {
         duration: 0.5,
         ease: "power2.in",
         delay: 0.3,
+        onComplete: () => {
+          if (!lastFocusRef) return;
+          lastFocusRef.focus();
+        },
       });
       document.removeEventListener("keydown", handleEscapeKey);
       document.removeEventListener("click", handleClickOutside);

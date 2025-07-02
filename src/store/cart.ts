@@ -110,3 +110,9 @@ export const useCheckoutModalStore = create<CheckoutModalState>()((set) => ({
       return { isOpen: !state.isOpen };
     }),
 }));
+
+export let lastFocusRef: HTMLElement | null = null;
+
+export const setLastFocusRef = (ref: HTMLElement) => {
+  lastFocusRef = ref;
+};

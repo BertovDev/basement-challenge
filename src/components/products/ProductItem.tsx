@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Product } from "../../types";
 import Image from "next/image";
 import { useCartStore } from "@/store/cart";
@@ -45,7 +45,7 @@ const ProductItem = React.forwardRef<HTMLDivElement, Props>(
             handleClick();
           }
         }}
-        onFocus={(e) => {
+        onFocus={() => {
           setShowFocusRing(lastInputWasKeyboard);
         }}
         onBlur={() => setShowFocusRing(false)}

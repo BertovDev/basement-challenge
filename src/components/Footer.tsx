@@ -114,7 +114,6 @@ export default function Footer() {
       id="footer"
       ref={footerRef}
       className="flex-none pt-4 px-2 2xl:px-6 flex flex-col items-end leading-[1] overflow-hidden focus:outline-none"
-      tabIndex={0}
     >
       <div className="flex flex-row items-center justify-end gap-x-10 will-change-transform">
         <Image
