@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState, createRef } from "react";
+import React, { useEffect, useRef } from "react";
 import mockData from "../../products/data.json";
 import ProductItem from "./ProductItem";
 import gsap from "gsap";
@@ -49,7 +49,7 @@ export default function Products({ masterTl }: Props) {
         className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full items-container opacity-0"
         ref={itemsContainer}
       >
-        {mockData.map((product, idx) => (
+        {mockData.map((product) => (
           <ProductItem key={product.id} product={product} />
         ))}
       </div>
