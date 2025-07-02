@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Cart from "./Cart";
 import { useCartStore } from "@/store/cart";
 import gsap from "gsap";
-import { useRef } from "react";
 
 export default function CartWrapper() {
   const cartWrapperRef = useRef<HTMLDivElement>(null);
@@ -17,42 +16,53 @@ export default function CartWrapper() {
       }
     };
 
-    const handkleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (event.target === cartWrapperRef.current) {
         toggleCart();
       }
     };
+
     if (isOpen) {
       document.addEventListener("keydown", handleEscapeKey);
-      document.addEventListener("click", handkleClickOutside);
-      gsap.to(cartWrapperRef.current, { opacity: 1, display: "block" });
+      document.addEventListener("click", handleClickOutside);
+      gsap.to(cartWrapperRef.current, {
+        opacity: 1,
+        display: "block",
+        duration: 0.5,
+        ease: "power2.out",
+      });
       gsap.fromTo(
         cartRef.current,
-        {
-          opacity: 0,
-          xPercent: 50,
-        },
+        { opacity: 0, xPercent: 100 },
         {
           opacity: 1,
           xPercent: 0,
-          duration: 1,
+          duration: 0.5,
           ease: "power3.out",
+          delay: 0.1,
         }
       );
     } else {
-      document.removeEventListener("keydown", handleEscapeKey);
-      document.removeEventListener("click", handkleClickOutside);
-      gsap.to(cartWrapperRef.current, { opacity: 0, display: "none" });
       gsap.to(cartRef.current, {
-        xPercent: 50,
-        duration: 1,
-        ease: "power3.out",
+        opacity: 0,
+        xPercent: 100,
+        duration: 0.5,
+        ease: "power3.in",
       });
+      gsap.to(cartWrapperRef.current, {
+        opacity: 0,
+        display: "none",
+        duration: 0.5,
+        ease: "power2.in",
+        delay: 0.3,
+      });
+      document.removeEventListener("keydown", handleEscapeKey);
+      document.removeEventListener("click", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
-      document.removeEventListener("click", handkleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [isOpen]);
 
