@@ -23,6 +23,12 @@ export default function HomePage() {
     });
   }, []);
 
+  useEffect(() => {
+    return () => {
+      masterTl.current.kill();
+    };
+  }, []);
+
   return (
     <main>
       {fontsLoaded ? (
