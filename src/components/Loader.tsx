@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
