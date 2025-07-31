@@ -1,11 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Navbar from "./Navbar";
-import Hero from "./Hero";
-import MarqueeSection from "./MarqueeSection";
-import Footer from "./Footer";
-import Products from "./products/Products";
-import CartWrapper from "./cart/CartWrapper";
 import CheckoutModal from "./cart/CheckoutModal";
 import Loader from "./Loader";
 
@@ -33,13 +27,14 @@ export default function HomePage() {
     <main>
       {fontsLoaded ? (
         <>
-          <Navbar masterTl={masterTl.current} />
-          <CartWrapper />
+          <Loader />
+          {/* <Navbar masterTl={masterTl.current} /> */}
+          {/* <CartWrapper /> */}
           {isOpen && <CheckoutModal />}
-          <Hero masterTl={masterTl.current} />
-          <MarqueeSection masterTl={masterTl.current} />
-          <Products masterTl={masterTl.current} />
-          <Footer />
+          {/* <Hero masterTl={masterTl.current} /> */}
+          {/* <MarqueeSection masterTl={masterTl.current} /> */}
+          {/* <Products masterTl={masterTl.current} />
+          <Footer /> */}
         </>
       ) : (
         <Loader />
