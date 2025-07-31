@@ -33,13 +33,14 @@ export default function HomePage() {
     <main>
       {fontsLoaded ? (
         <>
-          <Navbar masterTl={masterTl.current} />
-          <CartWrapper />
+          <Loader />
+          {/* <Navbar masterTl={masterTl.current} /> */}
+          {/* <CartWrapper /> */}
           {isOpen && <CheckoutModal />}
-          <Hero masterTl={masterTl.current} />
-          <MarqueeSection masterTl={masterTl.current} />
-          <Products masterTl={masterTl.current} />
-          <Footer />
+          {/* <Hero masterTl={masterTl.current} /> */}
+          {/* <MarqueeSection masterTl={masterTl.current} /> */}
+          {/* <Products masterTl={masterTl.current} />
+          <Footer /> */}
         </>
       ) : (
         <Loader />
